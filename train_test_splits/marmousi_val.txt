@@ -1,0 +1,1 @@
+/projects/ml4science/openfwi/Marmousi/marmousi_overthrust_data.npy	/projects/ml4science/openfwi/Marmousi/marmousi_overthrust.npy

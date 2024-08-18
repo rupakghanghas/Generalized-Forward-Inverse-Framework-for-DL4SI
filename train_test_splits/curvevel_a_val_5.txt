@@ -1,0 +1,2 @@
+/projects/ml4science/openfwi/CurveVel_A/data/data6.npy	/projects/ml4science/openfwi/CurveVel_A/model/model6.npy
+/projects/ml4science/openfwi/CurveVel_A/data/data7.npy	/projects/ml4science/openfwi/CurveVel_A/model/model7.npy

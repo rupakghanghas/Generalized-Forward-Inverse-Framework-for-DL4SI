@@ -1,0 +1,12 @@
+/projects/ml4science/openfwi/CurveFault_A/seis2_1_32.npy	/projects/ml4science/openfwi/CurveFault_A/vel2_1_32.npy
+/projects/ml4science/openfwi/CurveFault_A/seis2_1_33.npy	/projects/ml4science/openfwi/CurveFault_A/vel2_1_33.npy
+/projects/ml4science/openfwi/CurveFault_A/seis2_1_34.npy	/projects/ml4science/openfwi/CurveFault_A/vel2_1_34.npy
+/projects/ml4science/openfwi/CurveFault_A/seis2_1_35.npy	/projects/ml4science/openfwi/CurveFault_A/vel2_1_35.npy
+/projects/ml4science/openfwi/CurveFault_A/seis3_1_32.npy	/projects/ml4science/openfwi/CurveFault_A/vel3_1_32.npy
+/projects/ml4science/openfwi/CurveFault_A/seis3_1_33.npy	/projects/ml4science/openfwi/CurveFault_A/vel3_1_33.npy
+/projects/ml4science/openfwi/CurveFault_A/seis3_1_34.npy	/projects/ml4science/openfwi/CurveFault_A/vel3_1_34.npy
+/projects/ml4science/openfwi/CurveFault_A/seis3_1_35.npy	/projects/ml4science/openfwi/CurveFault_A/vel3_1_35.npy
+/projects/ml4science/openfwi/CurveFault_A/seis4_1_32.npy	/projects/ml4science/openfwi/CurveFault_A/vel4_1_32.npy
+/projects/ml4science/openfwi/CurveFault_A/seis4_1_33.npy	/projects/ml4science/openfwi/CurveFault_A/vel4_1_33.npy
+/projects/ml4science/openfwi/CurveFault_A/seis4_1_34.npy	/projects/ml4science/openfwi/CurveFault_A/vel4_1_34.npy
+/projects/ml4science/openfwi/CurveFault_A/seis4_1_35.npy	/projects/ml4science/openfwi/CurveFault_A/vel4_1_35.npy
