@@ -59,7 +59,7 @@ Follow these steps to set up the Python environment using the provided `.yaml` f
     ```
 
 ## Training Instructions
-The training scripts for the project are located in the `src` folder. Depending on your task, you can train the model using either the forward or inverse training scripts.
+The training scripts for the project are located in the `src` folder. Depending on your task, you can train the model using either the forward or inverse training scripts. Sample training scripts are located in the `scripts` folder
 
 ### Train the Forward Model
 
