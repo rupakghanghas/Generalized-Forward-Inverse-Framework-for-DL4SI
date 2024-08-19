@@ -7,6 +7,7 @@ applications. While traditional techniques for solving forward and inverse probl
 ## Table of Contents
 
 - [Installation](#installation)
+- [Training Instructions](#training-instructions)
 - [Usage](#usage)
 
 ## Installation
@@ -56,6 +57,32 @@ Follow these steps to set up the Python environment using the provided `.yaml` f
     ```bash
     conda list
     ```
+
+## Training Instructions
+The training scripts for the project are located in the `src` folder. Depending on your task, you can train the model using either the forward or inverse training scripts.
+
+### Train the Forward Model
+
+To train any of the forward models (baselines and Latent U-Nets), run the following command:
+
+```bash
+python src/train_forward.py
+```
+
+### Train the Inverse Model
+
+To train any of the inverse models (baselines and Latent U-Nets), run the following command:
+
+```bash
+python src/train_inverse.py
+```
+### Train Invertible X-Net
+
+To train Invertible X-Net for both directions, run the following command:
+
+```bash
+python src/train_invertible_x_net.py
+```
 
 ## Usage
 
