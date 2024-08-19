@@ -8,7 +8,7 @@ applications. While traditional techniques for solving forward and inverse probl
 
 - [Installation](#installation)
 - [Training Instructions](#training-instructions)
-- [Usage](#usage)
+- [Evaluation Instructions](#evaluation-instructions)
 
 ## Installation
 
