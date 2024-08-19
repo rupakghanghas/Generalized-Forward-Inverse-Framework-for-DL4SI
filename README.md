@@ -84,5 +84,22 @@ To train Invertible X-Net for both directions, run the following command:
 python src/train_invertible_x_net.py
 ```
 
-## Usage
+## Evaluation Instructions
+
+The evaluation scripts for the project are located in the `evaluate` folder. Depending on your task, you can evaluate either the forward or inverse model. Sample training scripts are located in the `scripts` folder
+
+### Evaluate the Forward Model
+
+To evaluate any of the forward models (baselines and Latent U-Nets), run the following command:
+
+```bash
+python -u evaluate/evaluate_zero_shot_forward_models.py
+```
+### Evaluate the Inverse Model
+
+To evaluate any of the inverse models (baselines and Latent U-Nets) and also the Invertible X-Net, run the following command:
+
+```bash
+python -u evaluate/evaluate_zero_shot_inverse_models.py
+```
 
