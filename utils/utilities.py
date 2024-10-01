@@ -26,7 +26,7 @@ from matplotlib.colors import ListedColormap
 
 print(os.getcwd())
 
-rainbow_cmap = ListedColormap(np.load('/projects/ml4science/OpenFWI/Latent_Bijectivity/utils/rainbow256.npy'))
+rainbow_cmap = ListedColormap(np.load('./rainbow256.npy'))
 
 forward_model_list = [
                       forward_network.FNO2d, 
