@@ -1,4 +1,4 @@
-# A Unified Framework for Forward and Inverse Problems in Subsurface Imaging using Latent Space Translations
+# A Unified Framework for Forward and Inverse Problems in Subsurface Imaging using Latent Space Translations | ICLR 2025
 
 
 In subsurface imaging, learning the mapping from velocity maps to seismic waveforms (forward problem) and waveforms to velocity (inverse problem) is important for several
