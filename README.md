@@ -1,4 +1,4 @@
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) ![Python Version](https://img.shields.io/badge/python-3.8-blue) ![PyTorch Version](https://img.shields.io/badge/pytorch-1.9.0-blue)  [![arXiv](https://img.shields.io/badge/arXiv-1234.56789-b31b1b.svg)]([https://arxiv.org/abs/2310.09441](https://arxiv.org/abs/2410.11247)) 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) ![Python Version](https://img.shields.io/badge/python-3.8-blue) ![PyTorch Version](https://img.shields.io/badge/pytorch-2.0.1-blue)  [![arXiv](https://img.shields.io/badge/arXiv-1234.56789-b31b1b.svg)]([https://arxiv.org/abs/2310.09441](https://arxiv.org/abs/2410.11247)) 
 
 # A Unified Framework for Forward and Inverse Problems in Subsurface Imaging using Latent Space Translations | ICLR 2025
 
