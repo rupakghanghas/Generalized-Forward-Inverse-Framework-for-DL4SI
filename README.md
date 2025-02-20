@@ -110,3 +110,6 @@ To evaluate any of the inverse models (baselines and Latent U-Nets) and also the
 python -u evaluate/evaluate_zero_shot_inverse_models.py
 ```
 
+### Dataset and Baselines
+
+Refer to the OpenFWI GitHub repo to download the datasets and to access the baseline codes. https://github.com/lanl/OpenFWI.git
