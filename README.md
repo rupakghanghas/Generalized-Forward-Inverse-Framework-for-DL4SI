@@ -33,7 +33,7 @@ Follow these steps to set up the Python environment using the provided `.yaml` f
 1. **Clone the repository (if you haven't already):**
 
     ```bash
-    git clone https://github.com/your-username/your-repo-name.git
+    git clone https://github.com/KGML-lab/Genralized-Forward-Inverse-Framework-for-DL4SI.git
     cd your-repo-name
     ```
 
