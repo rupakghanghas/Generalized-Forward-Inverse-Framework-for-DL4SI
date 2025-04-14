@@ -1,4 +1,9 @@
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) ![Python Version](https://img.shields.io/badge/python-3.8-blue) ![PyTorch Version](https://img.shields.io/badge/pytorch-2.0.1-blue)  [![arXiv](https://img.shields.io/badge/arXiv-1234.56789-b31b1b.svg)]([https://arxiv.org/abs/2310.09441](https://arxiv.org/abs/2410.11247)) 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
+![Python Version](https://img.shields.io/badge/python-3.8-blue) 
+![PyTorch Version](https://img.shields.io/badge/pytorch-2.0.1-blue)  
+[![arXiv](https://img.shields.io/badge/arXiv-1234.56789-b31b1b.svg)]([https://arxiv.org/abs/2310.09441](https://arxiv.org/abs/2410.11247)) 
+[![OpenReview](https://img.shields.io/badge/OpenReview-ICLR--2025-green)](https://openreview.net/forum?id=yIlyHJdYV3&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DICLR.cc%2F2025%2FConference%2FAuthors%23your-submissions))  
+[![Hugging Face](https://img.shields.io/badge/HuggingFace-model-yellow)](https://huggingface.co/papers/2410.11247)
 
 # A Unified Framework for Forward and Inverse Problems in Subsurface Imaging using Latent Space Translations | ICLR 2025
 
