@@ -117,3 +117,17 @@ python -u evaluate/evaluate_zero_shot_inverse_models.py
 ### Dataset and Baselines
 
 Refer to the OpenFWI GitHub repo to download the datasets and to access the baseline codes. https://github.com/lanl/OpenFWI.git
+
+
+### Bibtex
+@inproceedings{guptaunified,
+  title={A Unified Framework for Forward and Inverse Problems in Subsurface Imaging using Latent Space Translations},
+  author={Gupta, Naveen and Sawhney, Medha and Daw, Arka and Lin, Youzuo and Karpatne, Anuj},
+  booktitle={The Thirteenth International Conference on Learning Representations}
+}
+@article{gupta2024unified,
+  title={A Unified Framework for Forward and Inverse Problems in Subsurface Imaging using Latent Space Translations},
+  author={Gupta, Naveen and Sawhney, Medha and Daw, Arka and Lin, Youzuo and Karpatne, Anuj},
+  journal={arXiv preprint arXiv:2410.11247},
+  year={2024}
+}
