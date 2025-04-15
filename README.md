@@ -3,6 +3,7 @@
 ![PyTorch Version](https://img.shields.io/badge/pytorch-2.0.1-blue)  [![arXiv](https://img.shields.io/badge/arXiv-1234.56789-b31b1b.svg)](https://arxiv.org/abs/2410.11247)
 [![OpenReview](https://img.shields.io/badge/OpenReview-ICLR--2025-green)](https://openreview.net/forum?id=yIlyHJdYV3&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DICLR.cc%2F2025%2FConference%2FAuthors%23your-submissions)) 
 [![Hugging Face](https://img.shields.io/badge/Hugging--Face-Model-yellow?logo=huggingface&logoColor=yellow)](https://huggingface.co/papers/2410.11247)
+[![Google Scholar](https://img.shields.io/badge/Google-Scholar-4885ed?logo=google-scholar&logoColor=white)](https://scholar.google.com/scholar_lookup?title=A%20Unified%20Framework%20for%20Forward%20and%20Inverse%20Problems%20in%20Subsurface%20Imaging%20using%20Latent%20Space%20Translations)
 
 # A Unified Framework for Forward and Inverse Problems in Subsurface Imaging using Latent Space Translations | ICLR 2025
 
