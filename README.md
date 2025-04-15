@@ -37,7 +37,7 @@ Follow these steps to set up the Python environment using the provided `.yaml` f
 1. **Clone the repository (if you haven't already):**
 
     ```bash
-    git clone https://github.com/KGML-lab/Genralized-Forward-Inverse-Framework-for-DL4SI.git
+    git clone https://github.com/KGML-lab/Generalized-Forward-Inverse-Framework-for-DL4SI.git
     cd your-repo-name
     ```
 
@@ -69,50 +69,95 @@ Follow these steps to set up the Python environment using the provided `.yaml` f
     conda list
     ```
 
-## Training Instructions
-The training scripts for the project are located in the `src` folder. Depending on your task, you can train the model using either the forward or inverse training scripts. Sample training scripts are located in the `scripts` folder
+## 🏋️‍♂️ Training Instructions
 
-### Train the Forward Model
+Training scripts are located in the `src/` directory. Sample configurations can be found in the `scripts/` folder.
 
-To train any of the forward models (baselines and Latent U-Nets), run the following command:
+### General Notes
 
+- `-ds` specifies the dataset name. Options: `flatvel-a`, `curvevel-a`, `curvefault-a`, `style-a`, and `*-b` variants.
+- `-t` and `-v` specify paths to training and validation splits.
+- `--mask_factor` allows training on dataset subsets (values from `0.0` to `0.9`)
+- `--latent-dim` (optional) sets latent space size for Invertible X-Net
+- Models include: `UNetForwardModel`, `UNetInverseModel`, `IUnetForwardModel`, `IUnetInverseModel`, `Invertible_XNet`, `WaveformNet`, `InversionNet`
+
+---
+
+### Model Training
+
+#### UNet (Large: ~34.7M, Small: ~17.8M)
 ```bash
-python src/train_forward.py
+python -u src/train_forward.py -ds flatvel-a -o ./SupervisedExperiment/FlatVel-A/UNetForwardModel_33M/ \
+  --tensorboard -eb 150 -m UNetForwardModel --lambda_amp 1.0 --lambda_vgg_amp 0.1 \
+  -t train_test_splits/flatvel_a_train.txt -v train_test_splits/flatvel_a_val.txt \
+  --optimizer "Adam" --unet_depth 2 --unet_repeat_blocks 2
 ```
 
-### Train the Inverse Model
+#### UNet Inverse
+```
+python -u src/train_inverse.py -ds flatvel-a -o ./SupervisedExperiment/FlatVel-A/UNetInverseModel_33M/ \
+  --tensorboard -eb 150 -m UNetInverseModel --lambda_vel 1.0 --lambda_vgg_vel 0.1 \
+  --optimizer "Adam" --unet_depth 2 --unet_repeat_blocks 2
+```
 
-To train any of the inverse models (baselines and Latent U-Nets), run the following command:
+### Invertible X-Net Training
+
+To train the **Invertible X-Net** model on the `flatvel-a` dataset without cycle-consistency loss:
 
 ```bash
-python src/train_inverse.py
+python -u src/train_invertible_x_net.py -ds flatvel-a -o ./SupervisedExperiment/FlatVel-A/Invertible_XNet/ \
+  --optimizer "Adamax" --lr 0.002 --tensorboard -eb 150 -m IUNET --mask_factor 0.0 \
+  --lambda_amp 10.0 --lambda_vel 1.0 --lambda_vgg_vel 0.1 --lambda_vgg_amp 0.3 \
+  --lambda_cycle_vel 0.0 --lambda_cycle_amp 0.0
 ```
-### Train Invertible X-Net
+Additional Notes:
+-  To enable cycle-consistency loss, set --lambda_cycle_vel and --lambda_cycle_amp to non-zero values (e.g., 1.0).
+-  To use a warmup schedule for cycle loss, add --warmup_cycle_epochs <num_epochs>.
+-  To modify latent space dimension, add --latent-dim <8|16|32|64|70>.
+-  For dataset variants (e.g., curvevel-a, style-b), change -ds, output path -o, and update -t / -v for train/test splits accordingly.
 
-To train Invertible X-Net for both directions, run the following command:
 
-```bash
-python src/train_invertible_x_net.py
-```
 
 ## Evaluation Instructions
 
-The evaluation scripts for the project are located in the `evaluate` folder. Depending on your task, you can evaluate either the forward or inverse model. Sample training scripts are located in the `scripts` folder
+Evaluation scripts are located in the `evaluate/` directory. These support zero-shot evaluation for forward and inverse models.  
+**Important:** Before running evaluation, update the `base_path` variable in the evaluation scripts to point to your saved model directories.
 
-### Evaluate the Forward Model
+---
 
-To evaluate any of the forward models (baselines and Latent U-Nets), run the following command:
-
-```bash
-python -u evaluate/evaluate_zero_shot_forward_models.py
-```
-### Evaluate the Inverse Model
-
-To evaluate any of the inverse models (baselines and Latent U-Nets) and also the Invertible X-Net, run the following command:
+### Forward Model Evaluation (Zero-Shot)
 
 ```bash
-python -u evaluate/evaluate_zero_shot_inverse_models.py
+python -u evaluate/evaluate_zero_shot_forward_models.py \
+  --model_save_name "UNetForwardModel_33M" --model_type "UNetForwardModel"
 ```
+Supported model types:
+- UNetForwardModel
+- UNetForwardModel with --unet_repeat_blocks 1 (for smaller variant)
+- WaveformNet
+- IUnetForwardModel
+- FNO (if applicable)
+
+
+### Inverse Model Evaluation (Zero-Shot)
+```
+python -u evaluate/evaluate_zero_shot_inverse_models.py \
+  --model_save_name "UNetInverseModel_33M" --model_type "UNetInverseModel"
+```
+Supported model types:
+- UNetInverseModel
+- UNetInverseModel with --unet_repeat_blocks 1 (for smaller variant)
+- IUnetInverseModel
+- InversionNet
+  
+### Inveritble X-Net Evaluation (Zero-Shot)
+```
+python -u evaluate/evaluate_zero_shot_inverse_models.py \
+  --model_save_name "Invertible_XNet" --model_type "IUNET"
+```
+
+
+
 
 ### Dataset and Baselines
 
