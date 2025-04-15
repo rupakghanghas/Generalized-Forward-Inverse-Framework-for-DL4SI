@@ -18,8 +18,21 @@ applications. While traditional techniques for solving forward and inverse probl
 ## Table of Contents
 
 - [Installation](#installation)
+  - [Prerequisites](#prerequisites)
+  - [Setting Up the Environment](#setting-up-the-environment)
 - [Training Instructions](#training-instructions)
+  - [General Notes](#general-notes)
+  - [Model Training](#model-training)
+    - [UNet (Forward)](#unet-large-347m-small-178m)
+    - [UNet (Inverse)](#unet-inverse)
+    - [Invertible X-Net Training](#invertible-x-net-training)
 - [Evaluation Instructions](#evaluation-instructions)
+  - [Forward Model Evaluation (Zero-Shot)](#forward-model-evaluation-zero-shot)
+  - [Inverse Model Evaluation (Zero-Shot)](#inverse-model-evaluation-zero-shot)
+  - [Inveritble X-Net Evaluation (Zero-Shot)](#inveritble-x-net-evaluation-zero-shot)
+- [Visualization and Plotting](#visualization-and-plotting)
+- [Dataset and Baselines](#dataset-and-baselines)
+- [Bibtex](#bibtex)
 
 ## Installation
 
@@ -69,7 +82,7 @@ Follow these steps to set up the Python environment using the provided `.yaml` f
     conda list
     ```
 
-## 🏋️‍♂️ Training Instructions
+## Training Instructions
 
 Training scripts are located in the `src/` directory. Sample configurations can be found in the `scripts/` folder.
 
@@ -157,6 +170,10 @@ python -u evaluate/evaluate_zero_shot_inverse_models.py \
 ```
 
 
+### Visualization and Plotting
+
+All scripts for generating visualizations and plots are located in the `evaluate/plot_codes/` directory.  
+This includes utilities for plotting predictions, errors, waveform overlays, and comparison figures for both forward and inverse models.
 
 
 ### Dataset and Baselines
