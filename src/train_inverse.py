@@ -80,8 +80,26 @@ def train_one_epoch(model, vgg_model, masked_criterion, optimizer, lr_scheduler,
                 writer.add_scalar('vel_vgg_loss_g1v', vel_vgg_loss_g1v_val, step)
                 writer.add_scalar('vel_vgg_loss_g2v', vel_vgg_loss_g2v_val, step)
 
+        # Calcultaing the reconstruction loss on encoder-decoder for both amp and vel     
+        amp_loss_recons = 0  
+        vel_loss_recons = 0 
+        if args.lambda_recons>0:
+            # print("applying reconstruction")
+            vel_recons = model.vel_model.forward(vel)
+            amp_recons = model.amp_model.forward(amp)
+            amp_loss_recons = nn.MSELoss()(amp_recons, amp)  # Compute amplitude loss
+            vel_loss_recons = nn.MSELoss()(vel_recons, vel)  # Compute velocity loss
+            
+            metric_logger.update(amp_loss_recons = amp_loss_recons, 
+                             vel_loss_recons = vel_loss_recons)
+            
+            if writer:
+                writer.add_scalar('amp_loss_recons', amp_loss_recons, step)
+                writer.add_scalar('vel_loss_recons', vel_loss_recons, step)
+
+
         
-        loss = args.lambda_vel * vel_loss + args.lambda_vgg_vel * vel_vgg_loss 
+        loss = args.lambda_vel * vel_loss + args.lambda_vgg_vel * vel_vgg_loss + args.lambda_recons * amp_loss_recons + args.lambda_recons * vel_loss_recons
 
         loss.backward()
         optimizer.step()
@@ -440,7 +458,8 @@ def parse_args():
     parser.add_argument('--lambda_vgg_vel', type=float, default=0.1)
     parser.add_argument('--vgg_layer_output', type=int, default=2, help='VGG16 pretrained model layer output for perceptual loss calculation.')
     parser.add_argument('--lambda_reg', type=float, default=0.1, help='lambda coefficient for TV Norm regularization.')
-
+    parser.add_argument('--lambda_recons', type=float, default=0.0, help='lambda coefficient for reconstruction loss for both amp and vel')
+    
     
     # Distributed training related
     parser.add_argument('--sync-bn', action='store_true', help='Use sync batch norm')
@@ -454,6 +473,7 @@ def parse_args():
 
     # default_path = "/projects/ml4science/openfwi/openfwi_results/"
     default_path = "/projects/ml4science/OpenFWI/Results/"
+    default_path = "/globalscratch/OpenFWI/Results"
 
     args.output_path = os.path.join(default_path, args.output_path, args.save_name, args.suffix or '')
     args.log_path = os.path.join(default_path, args.log_path, args.save_name, args.suffix or '')

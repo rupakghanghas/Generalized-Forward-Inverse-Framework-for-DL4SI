@@ -69,6 +69,7 @@ parser.add_argument("--num_images", type=int, default=5, help="Number of images"
 
 parser.add_argument("--model_type", default="IUnetInverseModel", help="Model type")
 parser.add_argument("--base_path", default="/projects/ml4science/OpenFWI/Results/SupervisedExperiment/", help="Base path")
+parser.add_argument("--ckpt", default="latest_checkpoint.pth", help="Model type")
 parser.add_argument("--model_save_name", default="IUnetInverseModel", help="Model save name")
 parser.add_argument("--unet_depth", type=int, default=2, help="UNet depth")
 parser.add_argument("--unet_repeat_blocks", type=int, default=2, help="Number of repeated UNet blocks")
@@ -97,6 +98,7 @@ def tanh_transform(data):
 
 
 device = torch.device(device)
+# ckpt = "latest_checkpoint.pth"
 
 datasets = ["flatvel-a", "flatvel-b",
           "curvevel-a", "curvevel-b",
@@ -400,7 +402,7 @@ def generate_eval_matrix(model_names, model_paths, datasets):
 
     for i in range(len(model_names)):
         model_name = model_names[i]
-        model_path = os.path.join(base_path, model_paths[i], "latest_checkpoint.pth")
+        model_path = os.path.join(base_path, model_paths[i], ckpt)
         if not os.path.exists(model_path):
             print(f"The path does not exist: {model_path}")
             continue
