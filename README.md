@@ -5,6 +5,9 @@
 [![Hugging Face](https://img.shields.io/badge/Hugging--Face-Model-yellow?logo=huggingface&logoColor=yellow)](https://huggingface.co/papers/2410.11247)
 [![Google Scholar](https://img.shields.io/badge/Google-Scholar-4885ed?logo=google-scholar&logoColor=white)](https://scholar.google.com/scholar_lookup?title=A%20Unified%20Framework%20for%20Forward%20and%20Inverse%20Problems%20in%20Subsurface%20Imaging%20using%20Latent%20Space%20Translations)
 
+[![A Models](https://img.shields.io/badge/Zenodo--Model--Checkpoints--A-15226768-pink.svg)](https://doi.org/10.5281/zenodo.15226768)
+[![B Models](https://img.shields.io/badge/Zenodo--Model--Checkpoints--B-15226366-pink.svg)](https://doi.org/10.5281/zenodo.15226366)
+
 # A Unified Framework for Forward and Inverse Problems in Subsurface Imaging using Latent Space Translations | ICLR 2025
 
 
@@ -33,6 +36,7 @@ applications. While traditional techniques for solving forward and inverse probl
   - [Inveritble X-Net Evaluation (Zero-Shot)](#inveritble-x-net-evaluation-zero-shot)
 - [Visualization and Plotting](#visualization-and-plotting)
 - [Dataset and Baselines](#dataset-and-baselines)
+- [Model Checkpoints](#model-checkpoints)
 - [Bibtex](#bibtex)
 
 ## Installation
@@ -180,6 +184,21 @@ This includes utilities for plotting predictions, errors, waveform overlays, and
 ### Dataset and Baselines
 
 Refer to the OpenFWI GitHub repo to download the datasets and to access the baseline codes. https://github.com/lanl/OpenFWI.git
+
+## Model Checkpoints
+
+We provide model checkpoints for both A and B datasets via Zenodo. These include trained weights for all architectures evaluated in the paper.
+
+- 📦 **A Datasets (FlatVel-A, CurveFault-A, etc.):**  
+  [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15226768.svg)](https://doi.org/10.5281/zenodo.15226768)  
+  https://doi.org/10.5281/zenodo.15226768
+  
+- 📦 **B Datasets (CurveVel-B, CurveFault-B, etc.):**  
+  [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15226366.svg)](https://doi.org/10.5281/zenodo.15226366)  
+  https://doi.org/10.5281/zenodo.15226366
+
+
+
 
 
 ### Bibtex
